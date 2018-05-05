@@ -10,20 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 
 public class TestServlet extends HttpServlet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		System.out.println("service method");
 		super.service(req, resp);
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		System.out.println("doGet method");
 		PrintWriter pw = resp.getWriter();
 		pw.print("hello world");
 		pw.close();
-		super.doGet(req, resp);
+
 	}
 }
