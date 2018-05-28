@@ -12,12 +12,117 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
+
   <servlet>
 	  <servlet-name>TestServlet</servlet-name>
 	  <servlet-class>com.qiucl.server.controller.TestServlet</servlet-class>
+	  <!-- <load-on-startup>1</load-on-startup> -->
   </servlet>
   <servlet-mapping>
 	  <servlet-name>TestServlet</servlet-name>
 	  <url-pattern>/hello</url-pattern>
+	  <!-- <url-pattern>/hello/world</url-pattern> -->
+	  <!-- <url-pattern>/hello/*</url-pattern> -->
+  </servlet-mapping>
+  
+  <servlet>
+	  <servlet-name>GetPostServlet</servlet-name>
+	  <servlet-class>com.qiucl.server.controller.GetPostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>GetPostServlet</servlet-name>
+	  <url-pattern>/servlet/GetPostServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!--servletconfig servlet  -->
+  <servlet>
+	  <servlet-name>ServletConfigServlet</servlet-name>
+	  <servlet-class>com.qiucl.server.controller.ServletConfigServlet</servlet-class>
+	  <init-param>
+	  		<param-name>data1</param-name>
+	  		<param-value>value1</param-value>
+	  </init-param>
+	  <init-param>
+  		<param-name>data2</param-name>
+  		<param-value>value2</param-value>
+	  </init-param>
+	  <!-- <load-on-startup>2</load-on-startup> -->
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>ServletConfigServlet</servlet-name>
+	  <url-pattern>/servlet/ServletConfigServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- servletcontext servlet -->
+  <context-param>
+	  <param-name>globeData1</param-name>
+	  <param-value>123</param-value>
+  </context-param>
+  <context-param>
+	  <param-name>globeData2</param-name>
+	  <param-value>345</param-value>
+  </context-param>
+  
+  <servlet> 
+  	  <servlet-name>ServletContextServlet</servlet-name>
+	  <servlet-class>com.qiucl.server.controller.ServletContextServlet</servlet-class>
+	  <load-on-startup>0</load-on-startup>
+  </servlet>
+    <servlet-mapping>
+	  <servlet-name>ServletContextServlet</servlet-name>
+	  <url-pattern>/servlet/ServletContextServlet</url-pattern>
+  </servlet-mapping>
+  <!-- Cookie & Session -->
+  <servlet>
+	  <servlet-name>user</servlet-name>
+	  <servlet-class>com.qiucl.server.controller.UserServlet</servlet-class>
+	  <!-- <load-on-startup>1</load-on-startup> -->
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>user</servlet-name>
+	  <url-pattern>/user/specify</url-pattern>
+  </servlet-mapping>
+  <error-page>
+      <error-code>404</error-code>
+      <location>/error.html</location>
+  </error-page>
+  
+  <welcome-file-list>
+  	  <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 请求转发 -->
+  <servlet>
+		<servlet-name>ServletForward</servlet-name>
+		<servlet-class>com.qiucl.server.controller.ServletForward</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>ServletForward</servlet-name>
+  		<url-pattern>/forward</url-pattern>
+  </servlet-mapping>
+    <servlet>
+		<servlet-name>ServletForwardExample</servlet-name>
+		<servlet-class>com.qiucl.server.controller.ServletForwardExample</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>ServletForwardExample</servlet-name>
+  		<url-pattern>/forwardExample</url-pattern>
+  </servlet-mapping>
+  <!-- 请求重定向 -->
+    <servlet>
+		<servlet-name>ServletRedirect</servlet-name>
+		<servlet-class>com.qiucl.server.controller.ServletRedirect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>ServletRedirect</servlet-name>
+  		<url-pattern>/redirect</url-pattern>
+  </servlet-mapping>
+    <servlet>
+		<servlet-name>ServletRedirectExample</servlet-name>
+		<servlet-class>com.qiucl.server.controller.ServletRedirectExample</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>ServletRedirectExample</servlet-name>
+  		<url-pattern>/redirectExample</url-pattern>
   </servlet-mapping>
 </web-app>
